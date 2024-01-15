@@ -84,11 +84,12 @@
                             @if(Auth::user()->hasRole(2))
                                     <a class="dropdown-item" href="{{ route('article.show') }}">New Article</a>
                             @endif
-
+                            @if(auth()->user())
+                                    <a class="dropdown-item" href="{{ route('profile.page') }}">Profile</a>
+                            @endif
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>

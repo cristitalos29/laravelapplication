@@ -46,3 +46,15 @@ Route::put('/admin/users/{user}/update', [AdminController::class, 'updateUser'])
 Route::delete('/admin/user/delete/{user}', [AdminController::class, 'deleteUser'])->name('admin.user.delete');
 Route::get('/admin/users/{user}/edit', 'AdminController@editUser')->name('admin.user.edit');
 Route::get('/admin/users/{user}/edit', [AdminController::class, 'editUser'])->name('admin.users.edit');
+
+//Route::get('/profilepage', [\App\Http\Controllers\ProfilePageController::class, 'index'])->name('profile.page');
+
+
+use App\Http\Controllers\ProfilePageController;
+
+Route::middleware(['auth'])->group(function () {
+    // ... (existing routes)
+
+    Route::get('/profilepage', [ProfilePageController::class, 'index'])->name('profile.page');
+    Route::post('/profilepage/change-password', [ProfilePageController::class, 'changePassword'])->name('profile.password.change');
+});
