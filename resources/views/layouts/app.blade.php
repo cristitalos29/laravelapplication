@@ -82,10 +82,14 @@
                                 <a class="dropdown-item" href="{{ route('admin.panel') }}">Admin Panel</a>
                             @endif
                             @if(Auth::user()->hasRole(2))
-                                    <a class="dropdown-item" href="{{ route('article.show') }}">New Article</a>
+                                <a class="dropdown-item" href="{{ route('article.show') }}">New Article</a>
+                                <a class="dropdown-item" href="{{ route('user.articles') }}">Your Articles</a>
+                            @endif
+                            @if(Auth::user()->hasRole(3))
+                                    <a class="dropdown-item" href="{{ route('editor.pending.articles') }}">Pending Articles</a>
                             @endif
                             @if(auth()->user())
-                                    <a class="dropdown-item" href="{{ route('profile.page') }}">Profile</a>
+                                <a class="dropdown-item" href="{{ route('profile.page') }}">Profile</a>
                             @endif
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
@@ -114,6 +118,5 @@
     <!-- Copyright -->
 </footer>
 
-<!-- ... (existing scripts and styles) ... -->
 </body>
 </html>

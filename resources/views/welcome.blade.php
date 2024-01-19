@@ -9,7 +9,15 @@
                         <div class="card-body">
                             <h5 class="card-title" style="font-weight: bold;">{{ $article->title }}</h5>
                             <p class="card-text">{{ substr($article->description, 0, 100).' ...' }}</p>
-                            <a href="{{ route('articles.show', $article->id) }}" class="btn btn-outline-warning">Citeste</a>
+
+                            @auth
+                                <a href="{{ route('articles.show', $article->id) }}" class="btn btn-outline-warning">Citeste</a>
+                            @endauth
+
+                            @guest
+                                <a href="{{ route('login') }}" class="btn btn-outline-primary">Pentru a vizualiza, autentifica-te</a>
+                            @endguest
+
                         </div>
                     </div>
                 </div>

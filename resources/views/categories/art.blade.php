@@ -9,11 +9,8 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title" style="font-weight: bold;">{{ $article->title }}</h5>
-                            <p class="card-text">{{$article->description}}</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Postat la data:  {{$article->created_at}}
-                                in Categoria: {{$article->category}}</small>
+                            <p class="card-text">{{ substr($article->description, 0, 100).' ...' }}</p>
+                            <a href="{{ route('articles.show', $article->id) }}" class="btn btn-outline-warning">Read</a>
                         </div>
                     </div>
                 </div>
@@ -21,5 +18,3 @@
         </div>
     </div>
 @endsection
-
-
