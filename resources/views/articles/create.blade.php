@@ -53,7 +53,7 @@
                     </div>
 
                     <div class="form-group pt-4">
-                        <button class="btn btn-outline-warning">Create New Article</button>
+                        <button class="btn btn-outline-success">Create New Article</button>
                     </div>
 
                 </div>

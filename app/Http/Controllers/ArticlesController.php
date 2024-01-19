@@ -99,7 +99,6 @@ class ArticlesController extends Controller
             // Alte reguli de validare, dacă este cazul
         ]);
 
-        // Creare articol folosind datele primite
         Article::create([
             'user_id' => auth()->id(),
             'title' => $request->title,

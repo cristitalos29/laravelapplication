@@ -20,7 +20,7 @@
 
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
         <a class="navbar-brand me-auto ms-3" href="{{ url('/') }}">Revista IoT</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -109,7 +109,7 @@
     </main>
 </div>
 
-<footer class="bg-warning text-center text-lg-start mt-auto">
+<footer class="bg-success text-center text-lg-start mt-auto">
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2023 Copyright:

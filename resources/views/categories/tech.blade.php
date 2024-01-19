@@ -12,6 +12,11 @@
                             <p class="card-text">{{ substr($article->description, 0, 100).' ...' }}</p>
                             <a href="{{ route('articles.show', $article->id) }}" class="btn btn-outline-warning">Read</a>
                         </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Posted at:  {{$article->created_at}}
+                                in Category: {{ app(\App\Http\Controllers\CategoryController::class)->getCategoryNameById($article->category) }}
+                            </small>
+                        </div>
                     </div>
                 </div>
             @endforeach
